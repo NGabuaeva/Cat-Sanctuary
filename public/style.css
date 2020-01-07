@@ -116,7 +116,7 @@ ul{
   align-items: stretch;
 }
 
-.studentImg{
+.catImg{
   max-width: 70px;
   max-height: 70px;
   margin-right: 10px;
@@ -124,7 +124,7 @@ ul{
   align-self: center;
 }
 
-.studentOrCampus{
+.cat{
   display:  flex;
   background-color: rgba(207, 190, 248, 0.514);
   margin: 20px;

@@ -14,6 +14,7 @@ const gotCat = (cat) => ({
 //thunk creator to fetch selected cat from the database
 export const getCat = (catId) => async dispatch => {
   try {
+    console.log('from getCat thunk')
     const { data } = await axios.get(`/api/cats/${catId}`)
     dispatch(gotCat(data))
   } catch (error) {
@@ -39,7 +40,7 @@ export const updateCat = (newCat, catId) => async dispatch => {
 
 
 //reducer that will update the store based on the action
-export const cats = (state = {}, action) => {
+export const cat = (state = {}, action) => {
   switch (action.type) {
 
     case GOT_CAT:
