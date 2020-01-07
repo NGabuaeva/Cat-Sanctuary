@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Home from './Home'
-// import Cats from './components/Cats'
+import Cats from './Cats'
 // import SingleCat from './SingleCat'
 
 function Root() {
@@ -15,7 +15,7 @@ function Root() {
       </div>
       <Switch>
         <Route exact path='/' component={Home} />
-        {/* <Route exact path='/cats' component={Cats} /> */}
+        <Route exact path='/cats' component={Cats} />
         {/* <Route path='/cats/:catId' component={SingleCat} /> */}
       </Switch>
     </Router>

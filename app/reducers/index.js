@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux'
-import { cats } from './cats'
+import { cats, cat } from './cats'
 
-//I'm using combineReducers in case we wanna add dogs or other animals to the page later, but for now just cats
-const rootReducer = combineReducers({ cats })
+const rootReducer = combineReducers({ cats, cat })
 
 export default rootReducer
