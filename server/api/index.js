@@ -1,5 +1,6 @@
 const router = require('express').Router()
 
+//reroute all requests with '/cats' to the correct router file
 router.use("/cats", require("./routers/cats"))
 
 

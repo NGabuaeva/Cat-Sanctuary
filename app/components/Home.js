@@ -1,15 +1,20 @@
-import React, { useEffect, useState, useLayoutEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import { getCats } from '../reducers/cats'
 import * as d3 from 'd3'
 
+
+//home page component
 const Home = () => {
   const dispatch = useDispatch()
+
+  //fetch all cats from the database using a thunk and update the state
   useEffect(() => {
     dispatch(getCats())
 
   }, [])
 
+  //grab all cats from the state
   const cats = useSelector(state => state.cats)
 
   //get all the favorite snacks
@@ -24,14 +29,14 @@ const Home = () => {
 
   //get snacks' names as an array
   const keys = Object.keys(snacksObj)
-  console.log('keys:', keys)
   //get snacks amounts as an array
   const values = Object.values(snacksObj)
-  console.log('values:', values)
 
+  //set up dimensions for the chart
   const w = 300
   const h = 60
 
+  //create the chart
   function drawChart() {
     const svg = d3.select("#chart")
       .append("svg")

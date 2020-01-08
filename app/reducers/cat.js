@@ -14,7 +14,6 @@ const gotCat = (cat) => ({
 //thunk creator to fetch selected cat from the database
 export const getCat = (id) => async dispatch => {
   try {
-    console.log('from getCat thunk')
     const { data } = await axios.get(`/api/cats/${id}`)
     dispatch(gotCat(data))
   } catch (error) {

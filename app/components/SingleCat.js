@@ -4,10 +4,11 @@ import { getCat } from '../reducers/cat'
 import { useParams } from "react-router";
 import Form from './Form'
 
+
+//single cat page displaying detailed information with update and remove inforrmation features
 const SelectedCat = () => {
   const [form, setForm] = useState('')
   const { id } = useParams()
-  console.log('cat id:', id)
   const cat = useSelector(state => state.cat)
   const dispatch = useDispatch()
   useEffect(() => { dispatch(getCat(id)) }, [])
@@ -20,6 +21,7 @@ const SelectedCat = () => {
       {cat.hobby ? <h3>Hobby: {cat.hobby}</h3> : ''}
       {cat.favoriteSnack ? <h3>Favorite Snack: {cat.favoriteSnack}</h3> : ''}
       <button onClick={() => !form ? setForm(<Form />) : setForm('')} className='button'>UPDATE</button>
+      {/* open or hide the form when UPDATE is pressed */}
       {form ? <Form cat={cat} /> : ''}
     </div>
   )

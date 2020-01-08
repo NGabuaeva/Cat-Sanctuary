@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import Root from './components/root'
 
+//wrap all components in a provider, register the redux store
 render(
   <Provider store={store}>
     <Root />

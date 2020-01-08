@@ -2,9 +2,12 @@ import React from 'react'
 import { updateCat } from '../reducers/cat'
 import { connect } from 'react-redux'
 
+
+//Form to update cat information
 class Form extends React.Component {
   constructor(props) {
     super(props)
+    //set the state with existing information from the database
     this.state = {
       name: this.props.cat.name,
       breed: this.props.cat.breed,
@@ -15,17 +18,18 @@ class Form extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+  //update state as we're typing in one of the fields
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
     })
   }
+  //update cat information in the database by calling the thunk on submit
   handleSubmit(event) {
     event.preventDefault()
     this.props.updateCat(this.state, this.props.cat.id)
   }
   render() {
-    console.log('props:', this.props)
     return (
       <form onSubmit={this.handleSubmit} className='form'>
         <label htmlFor='name'>Name</label>

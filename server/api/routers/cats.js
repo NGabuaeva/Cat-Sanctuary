@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const Cat = require("../../db/models/cats")
 
+// get all cats from the database
 router.get("/", async (req, res, next) => {
   try {
     console.log('got to the server')
@@ -12,6 +13,7 @@ router.get("/", async (req, res, next) => {
   }
 })
 
+//r get one cat from the database based on the id
 router.get("/:id", async (req, res, next) => {
   try {
     const cat = await Cat.findByPk(req.params.id)
@@ -21,6 +23,7 @@ router.get("/:id", async (req, res, next) => {
   }
 })
 
+//add a new cat to the database
 router.post('/', async (req, res, next) => {
   try {
     const cat = await Cat.create(
@@ -32,6 +35,7 @@ router.post('/', async (req, res, next) => {
   }
 })
 
+//update selected cat in the database based on the id
 router.put('/:id', async (req, res, next) => {
   try {
     const cat = await Cat.findById(req.params.id)
@@ -39,6 +43,7 @@ router.put('/:id', async (req, res, next) => {
   } catch (err) { next(err) }
 })
 
+//error handler
 router.use((req, res, next) => {
   const err = new Error('API route not found!')
   err.status = 404

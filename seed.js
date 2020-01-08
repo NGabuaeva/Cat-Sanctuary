@@ -1,6 +1,7 @@
 const db = require('./server/db/db')
 const Cat = require('./server/db/models/cats')
 
+//dummy data with my cats >^_^<
 const cats = [{
   name: 'Pepper',
   age: 1,
@@ -40,6 +41,7 @@ const cats = [{
 ]
 
 
+//seed database
 
 const seed = async () => {
   await db.sync({ force: true })
@@ -47,7 +49,6 @@ const seed = async () => {
     return Cat.create(cat)
   }))
 
-  //seed your database here!
 
   console.log('Seeding success!')
   db.close()

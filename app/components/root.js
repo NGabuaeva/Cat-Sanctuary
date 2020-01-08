@@ -4,6 +4,8 @@ import Home from './Home'
 import Cats from './Cats'
 import SingleCat from './SingleCat'
 
+
+//root component with routes to redirect to components
 function Root() {
   return (
     <Router>
