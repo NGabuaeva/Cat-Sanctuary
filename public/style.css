@@ -81,6 +81,8 @@ text-align: center;
   align-self: center;
 }
   .button{
+    display: flex;
+    justify-content: center;
   color: rgb(42, 8, 80);
   background-color: rgb(177, 145, 252);
   padding: 5px;
@@ -112,7 +114,18 @@ text-align: center;
   padding-right: 10px;
 }
 
-.singleCat{
+.catList{
+  display:  flex;
+  flex-direction: column;
+  align-items: center;
+  height: max-content;
+  margin: 20px;
+  border-radius: 5px 5px 5px 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* .singleCat{
   display: flex;
   margin-left: 570px;
   margin-right: 570px;
@@ -123,7 +136,7 @@ text-align: center;
   margin-top: 10px;
 
   background-color: rgba(255, 192, 203, 0.726);
-}
+} */
 
 
 .list{
