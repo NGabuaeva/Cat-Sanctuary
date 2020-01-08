@@ -56,7 +56,10 @@ color: rgb(61, 34, 124)
   border-style: solid;
 }
 
-
+#chart{
+ display: flex;
+ justify-content: center;
+}
 
 .catName{
   color: rgb(42, 8, 80);

@@ -14,11 +14,11 @@ const SelectedCat = () => {
   return (
     <div className='cat'>
       <img className='image' src={cat.imageUrl} />
-      <h3>Name: {cat.name}</h3>
-      <h3>Breed: {cat.breed}</h3>
-      <h3>Age: {cat.age}</h3>
-      <h3>Hobby: {cat.hobby}</h3>
-      <h3>Favorite Snack: {cat.favoriteSnack}</h3>
+      {cat.name ? <h3>Name: {cat.name}</h3> : ''}
+      {cat.breed ? <h3>Breed: {cat.breed}</h3> : ''}
+      {cat.age ? <h3>Age: {cat.age}</h3> : ''}
+      {cat.hobby ? <h3>Hobby: {cat.hobby}</h3> : ''}
+      {cat.favoriteSnack ? <h3>Favorite Snack: {cat.favoriteSnack}</h3> : ''}
       <button onClick={() => !form ? setForm(<Form />) : setForm('')} className='button'>UPDATE</button>
       {form ? <Form cat={cat} /> : ''}
     </div>

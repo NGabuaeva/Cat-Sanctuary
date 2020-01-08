@@ -15,23 +15,18 @@ const Cat = db.define('cat', {
   },
   age: {
     type: Sequelize.INTEGER,
-    allowNull: false
   },
   breed: {
     type: Sequelize.STRING,
-    allowNull: false,
   },
   favoriteSnack: {
     type: Sequelize.STRING,
-    allowNull: false,
   },
   color: {
     type: Sequelize.STRING,
-    allowNull: false,
   },
   hobby: {
     type: Sequelize.STRING,
-    allowNull: false,
   }
 })
 

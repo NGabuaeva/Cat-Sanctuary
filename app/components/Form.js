@@ -23,13 +23,6 @@ class Form extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     this.props.updateCat(this.state, this.props.cat.id)
-    this.setState({
-      name: '',
-      breed: '',
-      age: '',
-      hobby: '',
-      favoriteSnack: ''
-    })
   }
   render() {
     console.log('props:', this.props)

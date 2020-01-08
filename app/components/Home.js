@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useLayoutEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import { getCats } from '../reducers/cats'
 import * as d3 from 'd3'
@@ -6,13 +6,10 @@ import * as d3 from 'd3'
 const Home = () => {
   const dispatch = useDispatch()
   useEffect(() => {
-    async function fetchData() {
-      await dispatch(getCats())
-      drawChart()
-    }
-    fetchData()
+    dispatch(getCats())
 
   }, [])
+
   const cats = useSelector(state => state.cats)
 
   //get all the favorite snacks
@@ -33,7 +30,7 @@ const Home = () => {
   console.log('values:', values)
 
   const w = 300
-  const h = 100
+  const h = 60
 
   function drawChart() {
     const svg = d3.select("#chart")
@@ -60,11 +57,11 @@ const Home = () => {
       .attr("x", (d, i) => i * 70)
       .attr("y", (d, i) => h - 30)
   }
-
+  drawChart()
   return (
     <div>
       <h1 className='componentTitle'>Welcome to the Cat Sanctuary!</h1>
-      <h3>Favorite snacks:</h3>
+      <h3 className='componentTitle'>Favorite snacks:</h3>
 
       <div id='chart'>
       </div>
