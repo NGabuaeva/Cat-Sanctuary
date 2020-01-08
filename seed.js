@@ -20,12 +20,12 @@ const cats = [{
   hobby: 'digging'
 },
 {
-  name: 'Auchentoshen',
+  name: 'Oshi',
   age: 1,
   breed: 'tabby',
   favoriteSnack: 'ham',
   color: 'tuxedo',
-  imageUrl: '/Osh_files/67301721_367802100815270_71611851719051529_n(1).jpg',
+  imageUrl: '/Osh_files/IMG_6743.jpg',
   hobby: 'cuddling'
 },
 {

@@ -9,8 +9,11 @@ function Root() {
     <Router>
       <div>
         <nav>
-          <Link to='/' className='navlink'>Home</Link>
-          <Link to='/cats' className='navLink'>Adopt a cat</Link>
+          <Link to='/' className='navLink'>Home</Link>
+          <Link to='/cats' className='navLink'>Meet Our Cats</Link>
+          <Link to='/aboutUs' className='navLink'>About Us</Link>
+          <Link to='/news' className='navLink'>News</Link>
+          <Link to='/contact' className='navLink'>Contact Us</Link>
         </nav>
       </div>
       <Switch>

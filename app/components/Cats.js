@@ -11,18 +11,14 @@ function Cats() {
   console.log('cats:', cats)
   return (
     <div className='catList'>
-      <ul>
-        {cats.map(cat => (<div className='listItem' key={cat.id}>
-          <li>
-            <div className='singleCat'>
-              <Link className='Link' to={`/cats/${cat.id}`}>
-                <img className='catImg' src={cat.imageUrl} />
-                <h1>{cat.name}</h1>
-              </Link>
-            </div>
-          </li>
-        </div>))}
-      </ul>
+
+      {cats.map(cat => (<div className='singleCat' key={cat.id}>
+        <Link to={`/cats/${cat.id}`}>
+          <img className='catImg' src={cat.imageUrl} />
+          <h3 className='catName'>{cat.name}</h3>
+        </Link>
+      </div>))}
+
     </div>
   )
 }

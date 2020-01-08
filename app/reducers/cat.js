@@ -32,7 +32,7 @@ const updatedCat = (cat) => ({
 //thunk creator to edit the cat in the database
 export const updateCat = (newCat, catId) => async dispatch => {
   try {
-    const { data } = await axios.put(`/api/students/${catId}`, newCat)
+    const { data } = await axios.put(`/api/cats/${catId}`, newCat)
     dispatch(updatedCat(data))
   }
   catch (err) { console.log(err) }

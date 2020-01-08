@@ -34,7 +34,7 @@ router.post('/', async (req, res, next) => {
 
 router.put('/:catId', async (req, res, next) => {
   try {
-    const cat = await Cat.findById(req.params.studentId)
+    const cat = await Cat.findById(req.params.catId)
     res.send(await cat.update(req.body))
   } catch (err) { next(err) }
 })
