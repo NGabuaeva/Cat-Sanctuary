@@ -57,6 +57,6 @@ class Form extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  updateCat: (cat, catId) => dispatch(updateCat(cat, catId))
+  updateCat: (cat, id) => dispatch(updateCat(cat, id))
 })
 export default connect(null, mapDispatchToProps)(Form)

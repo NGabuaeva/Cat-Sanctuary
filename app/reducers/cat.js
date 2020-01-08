@@ -12,10 +12,10 @@ const gotCat = (cat) => ({
 })
 
 //thunk creator to fetch selected cat from the database
-export const getCat = (catId) => async dispatch => {
+export const getCat = (id) => async dispatch => {
   try {
     console.log('from getCat thunk')
-    const { data } = await axios.get(`/api/cats/${catId}`)
+    const { data } = await axios.get(`/api/cats/${id}`)
     dispatch(gotCat(data))
   } catch (error) {
     console.log(error)
@@ -30,9 +30,9 @@ const updatedCat = (cat) => ({
 })
 
 //thunk creator to edit the cat in the database
-export const updateCat = (newCat, catId) => async dispatch => {
+export const updateCat = (newCat, id) => async dispatch => {
   try {
-    const { data } = await axios.put(`/api/cats/${catId}`, newCat)
+    const { data } = await axios.put(`/api/cats/${id}`, newCat)
     dispatch(updatedCat(data))
   }
   catch (err) { console.log(err) }

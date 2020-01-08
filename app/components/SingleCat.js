@@ -6,11 +6,11 @@ import Form from './Form'
 
 const SelectedCat = () => {
   const [form, setForm] = useState('')
-  const { catId } = useParams()
-  console.log('catId:', catId)
+  const { id } = useParams()
+  console.log('cat id:', id)
   const cat = useSelector(state => state.cat)
   const dispatch = useDispatch()
-  useEffect(() => { dispatch(getCat(catId)) }, [])
+  useEffect(() => { dispatch(getCat(id)) }, [])
   return (
     <div className='cat'>
       <img className='image' src={cat.imageUrl} />

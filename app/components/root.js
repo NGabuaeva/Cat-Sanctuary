@@ -19,7 +19,7 @@ function Root() {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/cats' component={Cats} />
-        <Route path='/cats/:catId' component={SingleCat} />
+        <Route path='/cats/:id' component={SingleCat} />
       </Switch>
     </Router>
   )
