@@ -27,6 +27,13 @@ class Form extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     this.props.addCat(this.state)
+    this.setState({
+      name: '',
+      breed: '',
+      age: undefined,
+      hobby: '',
+      favoriteSnack: '',
+    })
   }
   render() {
     return (
